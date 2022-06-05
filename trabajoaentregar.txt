@@ -1,0 +1,16 @@
+aprendiz
+    codigo
+    nombre
+    fechaNacimiento
+    sexo
+    ciudad
+
+    
+matricula
+    codigoMatricula
+    fechaMatricula
+    nombreCentro
+    costo
+    estado
+    codigoPrograma
+    codigoAprendiz

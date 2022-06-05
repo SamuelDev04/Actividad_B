@@ -13,9 +13,9 @@
         {
             $this -> host = "localhost";
             $this -> drive = "mysql";
-            $this -> base = "id18456879_db_ejem	";
-            $this -> user = "id18456879_root";
-            $this -> pass = "SaMu1025640977*";
+            $this -> base = "db_ejem";
+            $this -> user = "root";
+            $this -> pass = "";
             $this -> url = $this -> drive . ":host=". 
                             $this -> host. ";dbname=" . 
                             $this -> base;
