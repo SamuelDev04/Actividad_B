@@ -44,7 +44,7 @@
                 <!-- small box -->
                 <div class="input-group">
                   <span class="input-group-addon">Fecha Nacimiento</span>
-                  <input id="iapeApre" name="iapeApre" type="date" class="form-control">
+                  <input id="naciApre" name="naciApre" type="date" class="form-control">
                 </div>
               </div>
             </div>
@@ -61,11 +61,11 @@
                 </div>-->
                 <div class="input-group">
                   <span class="input-group-addon">Sexo</span>
-                  <select class="form-control" id="iname" name="iname">
-                    <option></option>
-                    <option>Mujer</option>
-                    <option>Hombre</option>
-                    <option>Otro</option>
+                  <select class="form-control" id="sexApren" name="sexApren" onchange="showSelected()">
+                    <option value="0"></option>
+                    <option value="1">Mujer</option>
+                    <option value="2">Hombre</option>
+                    <option value="3">Otro</option>
                   </select>
                 </div>
               </div>
@@ -74,14 +74,14 @@
                 <!-- small box -->
                 <div class="input-group">
                   <span class="input-group-addon">Ciudad</span>
-                  <input id="iape" name="iape" type="text" class="form-control">
+                  <input id="ciuApren" name="ciuApren" type="text" class="form-control">
                 </div>
               </div>
             </div>
           <br>
         
         <div class="box-footer">
-          <button class="btn btn-app bg-blue" type="submit" onclick="validate(event)">
+          <button class="btn btn-app bg-blue" type="submit" onclick="validateApren(event)">
             <i class="fa fa-save"></i> Guardar
           </button>
           <button class="btn btn-app bg-blue" type="submit" onclick="getGenerarReporte(event)">
@@ -92,12 +92,11 @@
       </form>
       </div>
       <?php
-        if (isset($_POST['iname'])){
+        if (isset($_POST['inameApre'])){
           $objCtrUser = new UserController();
-          $objCtrUser -> setInsertUser($_POST['iname'], $_POST['iape'], $_POST['iuser'], $_POST['icontra']);
+          $objCtrUser -> setInsertUser($_POST['inameApre'], $_POST['naciApre'], $_POST['sexApren'], $_POST['ciuApren']);
         }
       ?>
-
     </div>
     <!-- /.box -->
 
