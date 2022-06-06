@@ -13,4 +13,7 @@ matricula
     costo
     estado
     codigoPrograma
-    codigoAprendiz
+    codigoAprendiz\
+
+
+    si
