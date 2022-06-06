@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 06-06-2022 a las 15:12:51
+-- Tiempo de generación: 06-06-2022 a las 16:55:56
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 8.0.11
 
@@ -72,6 +72,41 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `aprendiz`
+--
+
+DROP TABLE IF EXISTS `aprendiz`;
+CREATE TABLE IF NOT EXISTS `aprendiz` (
+  `codigo` int(3) NOT NULL,
+  `nombre` varchar(50) NOT NULL,
+  `fechaNacimiento` date NOT NULL,
+  `sexo` varchar(50) NOT NULL,
+  `ciudad` varchar(50) NOT NULL,
+  PRIMARY KEY (`codigo`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `matricula`
+--
+
+DROP TABLE IF EXISTS `matricula`;
+CREATE TABLE IF NOT EXISTS `matricula` (
+  `codigoMatricula` int(3) NOT NULL,
+  `fechaMatricula` date NOT NULL,
+  `nombreCentro` varchar(150) NOT NULL,
+  `costo` varchar(50) NOT NULL,
+  `estado` varchar(50) NOT NULL,
+  `codigoPrograma` int(3) NOT NULL,
+  `codigoAprendiz` int(3) NOT NULL,
+  PRIMARY KEY (`codigoMatricula`),
+  KEY `codigoAprendiz` (`codigoAprendiz`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `user`
 --
 
@@ -96,6 +131,16 @@ INSERT INTO `user` (`code`, `name`, `lastName`, `userP`, `password`) VALUES
 (54, '2', '4', '2', '2'),
 (56, '77', '77', '77', '77'),
 (60, '22', '22', '22', '22');
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `matricula`
+--
+ALTER TABLE `matricula`
+  ADD CONSTRAINT `matricula_ibfk_1` FOREIGN KEY (`codigoAprendiz`) REFERENCES `aprendiz` (`codigo`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
