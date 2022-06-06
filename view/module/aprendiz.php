@@ -28,7 +28,7 @@
         </div>
         
       <div class="box-body">  
-      <form method="POST" id="formu">
+      <form method="POST" id="formuAprendiz">
 
           <!-- ROW 1 -->
             <div class="row">
@@ -36,14 +36,44 @@
                 <!-- small box -->
                 <div class="input-group">
                   <span class="input-group-addon">Nombre</span>
-                  <input id="iname" name="iname" type="text" class="form-control">
+                  <input id="inameApre" name="inameApre" type="text" class="form-control">
                 </div>
               </div>
               <!-- ./col -->
               <div class="col-lg-6 col-xs-6">
                 <!-- small box -->
                 <div class="input-group">
-                  <span class="input-group-addon">Apellido</span>
+                  <span class="input-group-addon">Fecha Nacimiento</span>
+                  <input id="iapeApre" name="iapeApre" type="date" class="form-control">
+                </div>
+              </div>
+            </div>
+
+            <br>
+
+          <!-- ROW 2 -->  
+            <div class="row">
+              <div class="col-lg-6 col-xs-6">
+                <!-- small box -->
+                <!--<div class="input-group">
+                  <span class="input-group-addon">Sexo</span>
+                  <input id="iname" name="iname" type="text" class="form-control">
+                </div>-->
+                <div class="input-group">
+                  <span class="input-group-addon">Sexo</span>
+                  <select class="form-control" id="iname" name="iname">
+                    <option></option>
+                    <option>Mujer</option>
+                    <option>Hombre</option>
+                    <option>Otro</option>
+                  </select>
+                </div>
+              </div>
+              <!-- ./col -->
+              <div class="col-lg-6 col-xs-6">
+                <!-- small box -->
+                <div class="input-group">
+                  <span class="input-group-addon">Ciudad</span>
                   <input id="iape" name="iape" type="text" class="form-control">
                 </div>
               </div>
