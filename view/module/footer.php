@@ -55,8 +55,10 @@
 <script src="view/js/ohsnap.js"></script>
 <!-- SweetAlert -->
 <script src="view/js/TweenMax.min.js"></script>
-<!-- Para las validaciones -->
+<!-- Para las validaciones de user -->
 <script src="view/js/validation.js"></script>
+<!-- Para las validaciones de aprendiz -->
+<script src="view/js/validationApren.js"></script>
 <!-- Para realizar el CRUD -->
 <script src="view/js/crud.js"></script>
 <!-- Para exportar la datatable -->

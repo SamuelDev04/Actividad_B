@@ -1,13 +1,13 @@
 <?php
     class AprendController{
 
-        public function setInsertUser($nombre, $fechaNacimiento, $sexo, $ciudad){
+        public function setInsertAprendiz($nombre, $fechaNacimiento, $sexo, $ciudad){
             try {
-                $objDtoAprendiz = new User();
-                $objDtoAprendiz -> setName($nombre);
-                $objDtoAprendiz -> setLastName($fechaNacimiento);
-                $objDtoAprendiz -> setUserP($sexo);
-                $objDtoAprendiz -> setPassword($ciudad);
+                $objDtoAprendiz = new Aprendiz();
+                $objDtoAprendiz -> setNombre($nombre);
+                $objDtoAprendiz -> setFechaNa($fechaNacimiento);
+                $objDtoAprendiz -> setSexo($sexo);
+                $objDtoAprendiz -> setCiudad($ciudad);
 
                 $objDaoAprendiz = new AprendizModel($objDtoAprendiz);
 

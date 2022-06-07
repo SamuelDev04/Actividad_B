@@ -1,12 +1,35 @@
-function showSelected(e){
-    e.preventDefault();
-    /* Para obtener el valor */
-    var cod = document.getElementById("sexApren").value;
+// function showSelected(e){
+//     e.preventDefault();
+//     /* Para obtener el valor */
+//     var cod = document.getElementById("sexApren").value;
     
-    /* Para obtener el texto */
-    var combo = document.getElementById("sexApren");
-    var selected = combo.options[combo.selectedIndex].text;
-}
+//     /* Para obtener el texto */
+//     var combo = document.getElementById("sexApren");
+//     var selected = combo.options[combo.selectedIndex].text;
+// }
+
+function fillBook(){    
+    var select = document.getElementById('sexApren').value;
+    
+    switch (select) {
+        case 1:
+            select = "Mujer";
+            return select;
+            break;
+        case 2:
+            select = "Hombre";
+            return select;
+            break;
+        case 3:
+            select = "Otro";
+            return select;
+            break;
+
+    document.getElementById('sexApren').value = select;
+
+    }
+
+ }
 
 function validateApren(e) {
     e.preventDefault();

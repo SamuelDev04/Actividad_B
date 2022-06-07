@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 06-06-2022 a las 17:08:45
+-- Tiempo de generación: 07-06-2022 a las 13:25:37
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 8.0.11
 
@@ -27,6 +27,13 @@ DELIMITER $$
 --
 -- Procedimientos
 --
+DROP PROCEDURE IF EXISTS `spConsultAprendiz`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `spConsultAprendiz` (IN `_codigo` INT(3))  BEGIN
+
+SELECT codigo,nombre,fechaNacimiento,sexo,ciudad FROM `aprendiz` WHERE codigo = _codigo;
+
+END$$
+
 DROP PROCEDURE IF EXISTS `spConsultUser`$$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `spConsultUser` (IN `_code` INT(5))  BEGIN
 
@@ -39,6 +46,13 @@ DROP PROCEDURE IF EXISTS `spDeleteUser`$$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `spDeleteUser` (IN `_code` INT(5))  BEGIN
 
 DELETE FROM `user` WHERE CODE = _code;
+
+END$$
+
+DROP PROCEDURE IF EXISTS `spInsertAprendiz`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `spInsertAprendiz` (IN `_name` VARCHAR(50), IN `_fechaNacimiento` DATE, IN `_sexo` VARCHAR(50), IN `_ciudad` VARCHAR(50))  BEGIN
+
+INSERT INTO aprendiz(NOMBRE, FECHANACIMIENTO, SEXO, CIUDAD) VALUES (_name, _fechaNacimiento, _sexo, _ciudad);
 
 END$$
 
@@ -118,7 +132,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `userP` varchar(25) NOT NULL,
   `password` varchar(25) NOT NULL,
   PRIMARY KEY (`code`)
-) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=66 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `user`
