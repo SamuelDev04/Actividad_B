@@ -1,9 +1,19 @@
+function showSelected(e){
+    e.preventDefault();
+    /* Para obtener el valor */
+    var cod = document.getElementById("sexApren").value;
+    
+    /* Para obtener el texto */
+    var combo = document.getElementById("sexApren");
+    var selected = combo.options[combo.selectedIndex].text;
+}
+
 function validateApren(e) {
     e.preventDefault();
     formulario = document.getElementById('formuAprendiz');
     nombre = document.getElementById('inameApre');
     fechaNacimiento = document.getElementById('naciApre');
-    sexo = document.getElementById('iuser');
+    sexo = document.getElementById('sexApren');
     ciudad = document.getElementById('ciuApren');
 
     lVali = true;
@@ -35,16 +45,6 @@ function validateApren(e) {
 
 }
 
-function showSelected(){
-    /* Para obtener el valor */
-    var cod = document.getElementById("sexApren").value;
-    alert(cod);
-    
-    /* Para obtener el texto */
-    var combo = document.getElementById("sexApren");
-    var selected = combo.options[combo.selectedIndex].text;
-    alert(selected);
-}
 
 if (window.history.replaceState) { // verificamos disponibilidad
     window.history.replaceState(null, null, window.location.href);

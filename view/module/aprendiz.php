@@ -1,4 +1,4 @@
-<input type="hidden" id="icode" name="icode">
+<input type="hidden" id="icodeApre" name="icodeApre">
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -61,7 +61,7 @@
                 </div>-->
                 <div class="input-group">
                   <span class="input-group-addon">Sexo</span>
-                  <select class="form-control" id="sexApren" name="sexApren" onchange="showSelected()">
+                  <select class="form-control" id="sexApren" name="sexApren" onchange="showSelected(event)">
                     <option value="0"></option>
                     <option value="1">Mujer</option>
                     <option value="2">Hombre</option>

@@ -9,9 +9,9 @@
                 $objDtoAprendiz -> setUserP($sexo);
                 $objDtoAprendiz -> setPassword($ciudad);
 
-                $objDaoUser = new AprendizModel($objDtoAprendiz);
+                $objDaoAprendiz = new AprendizModel($objDtoAprendiz);
 
-                if ($objDaoUser -> mIdInsertAprendiz()){
+                if ($objDaoAprendiz -> mIdInsertAprendiz()){
                     echo "<script>
                         Swal.fire({
                             icon: 'success',
