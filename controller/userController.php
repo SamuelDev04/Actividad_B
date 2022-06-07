@@ -58,7 +58,6 @@
             } catch (Exception $e) {
                 echo "Error en el controlador de insercion" .$e -> getMessage();
             }
-            
 
         }
 

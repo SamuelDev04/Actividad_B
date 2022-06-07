@@ -1,4 +1,4 @@
-<input type="hidden" id="icode" name="icode">
+<input type="hidden" id="icodeApre" name="icodeApre">
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -28,7 +28,7 @@
         </div>
         
       <div class="box-body">  
-      <form method="POST" id="formu">
+      <form method="POST" id="formuAprendiz">
 
           <!-- ROW 1 -->
             <div class="row">
@@ -36,22 +36,52 @@
                 <!-- small box -->
                 <div class="input-group">
                   <span class="input-group-addon">Nombre</span>
-                  <input id="iname" name="iname" type="text" class="form-control">
+                  <input id="inameApre" name="inameApre" type="text" class="form-control">
                 </div>
               </div>
               <!-- ./col -->
               <div class="col-lg-6 col-xs-6">
                 <!-- small box -->
                 <div class="input-group">
-                  <span class="input-group-addon">Apellido</span>
-                  <input id="iape" name="iape" type="text" class="form-control">
+                  <span class="input-group-addon">Fecha Nacimiento</span>
+                  <input id="naciApre" name="naciApre" type="date" class="form-control">
+                </div>
+              </div>
+            </div>
+
+            <br>
+
+          <!-- ROW 2 -->  
+            <div class="row">
+              <div class="col-lg-6 col-xs-6">
+                <!-- small box -->
+                <!--<div class="input-group">
+                  <span class="input-group-addon">Sexo</span>
+                  <input id="iname" name="iname" type="text" class="form-control">
+                </div>-->
+                <div class="input-group">
+                  <span class="input-group-addon">Sexo</span>
+                  <select class="form-control" id="sexApren" name="sexApren" onchange="showSelected(event)">
+                    <option value="0"></option>
+                    <option value="1">Mujer</option>
+                    <option value="2">Hombre</option>
+                    <option value="3">Otro</option>
+                  </select>
+                </div>
+              </div>
+              <!-- ./col -->
+              <div class="col-lg-6 col-xs-6">
+                <!-- small box -->
+                <div class="input-group">
+                  <span class="input-group-addon">Ciudad</span>
+                  <input id="ciuApren" name="ciuApren" type="text" class="form-control">
                 </div>
               </div>
             </div>
           <br>
         
         <div class="box-footer">
-          <button class="btn btn-app bg-blue" type="submit" onclick="validate(event)">
+          <button class="btn btn-app bg-blue" type="submit" onclick="validateApren(event)">
             <i class="fa fa-save"></i> Guardar
           </button>
           <button class="btn btn-app bg-blue" type="submit" onclick="getGenerarReporte(event)">
@@ -62,12 +92,11 @@
       </form>
       </div>
       <?php
-        if (isset($_POST['iname'])){
+        if (isset($_POST['inameApre'])){
           $objCtrUser = new UserController();
-          $objCtrUser -> setInsertUser($_POST['iname'], $_POST['iape'], $_POST['iuser'], $_POST['icontra']);
+          $objCtrUser -> setInsertUser($_POST['inameApre'], $_POST['naciApre'], $_POST['sexApren'], $_POST['ciuApren']);
         }
       ?>
-
     </div>
     <!-- /.box -->
 
