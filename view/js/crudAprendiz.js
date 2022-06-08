@@ -19,7 +19,7 @@ function eraseApren(obj) {
         reverseButtons: true
     }).then((result) => {
         if (result.isConfirmed) {
-            window.location = "index.php?ruta=erase&codigo=" + codigo;
+            window.location = "index.php?ruta=eraseAprendiz&codigo=" + codigo;
 
             /*swalWithBootstrapButtons.fire(
                 'Eliminado!',

@@ -1,13 +1,13 @@
 <?php
-
     //echo "Llego";
-    eraseUser();
-    function eraseUser(){
+    eraseAprendiz();
+
+    function eraseAprendiz(){
         try {
-            $objDtoUser = new User();
-            $objDtoUser -> setCode($_GET['codigo']);
-            $objDaoUser = new UserModel($objDtoUser);
-            if ($objDaoUser -> mIdEraseUser() == true) {
+            $objDtoAprendiz = new Aprendiz();
+            $objDtoAprendiz -> setCodigo($_GET['codigo']);
+            $objDaoAprendiz = new AprendizModel($objDtoAprendiz);
+            if ($objDaoAprendiz -> mIdEraseAprendiz() == true) {
                 echo "
                     <script>
                         Swal.fire(
@@ -17,11 +17,10 @@
                         )
                     </script>
                 ";
-                include_once("view/module/user.php");
+                include_once("view/module/aprendiz.php");
             }
         } catch (PDOException $e) {
             echo "Error en el borrado del registro " . $e -> getMessage();
         }
     }
-
 ?>

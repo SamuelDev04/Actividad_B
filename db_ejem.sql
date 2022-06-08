@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-06-2022 a las 17:06:47
+-- Tiempo de generación: 08-06-2022 a las 18:33:49
 -- Versión del servidor: 10.4.17-MariaDB
 -- Versión de PHP: 7.3.27
 
@@ -42,6 +42,14 @@ SELECT code,name,lastName,password FROM `user` WHERE code = _code;
 
 END$$
 
+DROP PROCEDURE IF EXISTS `spDeleteAprendiz`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `spDeleteAprendiz` (IN `_codigo` INT(3))  NO SQL
+BEGIN
+
+DELETE FROM `aprendiz` WHERE codigo = _codigo;
+
+END$$
+
 DROP PROCEDURE IF EXISTS `spDeleteUser`$$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `spDeleteUser` (IN `_code` INT(5))  BEGIN
 
@@ -63,10 +71,30 @@ INSERT INTO user(NAME, LASTNAME, USERP, PASSWORD) VALUES (_name, _lastName, _use
 
 END$$
 
+DROP PROCEDURE IF EXISTS `spSearchAllAprendiz`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `spSearchAllAprendiz` ()  NO SQL
+BEGIN
+
+SELECT codigo , nombre, fechaNacimiento, sexo, ciudad FROM aprendiz;
+
+END$$
+
 DROP PROCEDURE IF EXISTS `spSearchAllUser`$$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `spSearchAllUser` ()  BEGIN
 
 SELECT CODE, NAME, LASTNAME, USERP, PASSWORD FROM user;
+
+END$$
+
+DROP PROCEDURE IF EXISTS `spUpdateAprendiz`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `spUpdateAprendiz` (IN `_codigo` INT(3), IN `_name` VARCHAR(50), IN `_fechaNacimiento` DATE, IN `_sexo` VARCHAR(50), IN `_ciudad` VARCHAR(50))  NO SQL
+BEGIN
+
+UPDATE aprendiz SET nombre = _name,
+fechaNacimiento = _fechaNacimiento,
+sexo = _sexo,
+ciudad = _ciudad
+WHERE codigo  =  _codigo;	
 
 END$$
 
@@ -97,7 +125,14 @@ CREATE TABLE IF NOT EXISTS `aprendiz` (
   `sexo` varchar(50) NOT NULL,
   `ciudad` varchar(50) NOT NULL,
   PRIMARY KEY (`codigo`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `aprendiz`
+--
+
+INSERT INTO `aprendiz` (`codigo`, `nombre`, `fechaNacimiento`, `sexo`, `ciudad`) VALUES
+(1, 'Juaniyo', '2008-06-24', '1', 'Pereira');
 
 -- --------------------------------------------------------
 

@@ -17,6 +17,9 @@
       case 'erase':
           include_once("view/module/erase.php");
           break;
+      case 'eraseAprendiz':
+          include_once("view/module/eraseAprendiz.php");
+          break;
         
       default:
         include_once("view/module/presentation.php");
