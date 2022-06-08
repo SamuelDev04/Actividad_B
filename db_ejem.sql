@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-06-2022 a las 13:25:37
--- Versión del servidor: 10.4.21-MariaDB
--- Versión de PHP: 8.0.11
+-- Tiempo de generación: 08-06-2022 a las 17:06:47
+-- Versión del servidor: 10.4.17-MariaDB
+-- Versión de PHP: 7.3.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -91,7 +91,7 @@ DELIMITER ;
 
 DROP TABLE IF EXISTS `aprendiz`;
 CREATE TABLE IF NOT EXISTS `aprendiz` (
-  `codigo` int(3) NOT NULL,
+  `codigo` int(3) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(50) NOT NULL,
   `fechaNacimiento` date NOT NULL,
   `sexo` varchar(50) NOT NULL,
@@ -107,15 +107,14 @@ CREATE TABLE IF NOT EXISTS `aprendiz` (
 
 DROP TABLE IF EXISTS `matricula`;
 CREATE TABLE IF NOT EXISTS `matricula` (
-  `codigoMatricula` int(3) NOT NULL,
+  `codigoMatricula` int(3) NOT NULL AUTO_INCREMENT,
   `fechaMatricula` date NOT NULL,
   `nombreCentro` varchar(150) NOT NULL,
   `costo` varchar(50) NOT NULL,
   `estado` varchar(50) NOT NULL,
   `codigoPrograma` int(3) NOT NULL,
   `codigoAprendiz` int(3) NOT NULL,
-  PRIMARY KEY (`codigoMatricula`),
-  KEY `codigoAprendiz` (`codigoAprendiz`)
+  PRIMARY KEY (`codigoMatricula`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -145,16 +144,6 @@ INSERT INTO `user` (`code`, `name`, `lastName`, `userP`, `password`) VALUES
 (54, '2', '4', '2', '2'),
 (56, '77', '77', '77', '77'),
 (60, '22', '22', '22', '22');
-
---
--- Restricciones para tablas volcadas
---
-
---
--- Filtros para la tabla `matricula`
---
-ALTER TABLE `matricula`
-  ADD CONSTRAINT `matricula_ibfk_1` FOREIGN KEY (`codigoAprendiz`) REFERENCES `aprendiz` (`codigo`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
