@@ -63,6 +63,9 @@
 <script src="view/js/crud.js"></script>
 <!-- Para realizar el CRUD de aprendiz -->
 <script src="view/js/crudAprendiz.js"></script>
+<!-- Para realizar el CRUD de Matricula -->
+<script src="view/js/crudMatricula.js"></script>
+
 <!-- Para exportar la datatable -->
 
 <script>
