@@ -1,6 +1,5 @@
 <?php
     eraseMatricula();
-
     function eraseMatricula(){
         try {
             $objDtoMatricula = new Matricula();
