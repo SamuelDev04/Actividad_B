@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-06-2022 a las 18:33:49
--- Versión del servidor: 10.4.17-MariaDB
--- Versión de PHP: 7.3.27
+-- Tiempo de generación: 08-06-2022 a las 18:37:31
+-- Versión del servidor: 10.4.22-MariaDB
+-- Versión de PHP: 7.3.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -34,6 +34,13 @@ SELECT codigo,nombre,fechaNacimiento,sexo,ciudad FROM `aprendiz` WHERE codigo = 
 
 END$$
 
+DROP PROCEDURE IF EXISTS `spConsultMatricula`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `spConsultMatricula` (IN `_codigoMatricula` INT(3))  BEGIN
+
+SELECT codigoMatricula,fechaMatricula,nombreCentro,costo,estado,codigoPrograma,codigoAprendiz
+FROM `matricula` WHERE codigoMatricula = _codigoMatricula;
+END$$
+
 DROP PROCEDURE IF EXISTS `spConsultUser`$$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `spConsultUser` (IN `_code` INT(5))  BEGIN
 
@@ -47,6 +54,13 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `spDeleteAprendiz` (IN `_codigo` INT
 BEGIN
 
 DELETE FROM `aprendiz` WHERE codigo = _codigo;
+
+END$$
+
+DROP PROCEDURE IF EXISTS `spDeleteMatricula`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `spDeleteMatricula` (IN `_code` INT(3))  BEGIN
+
+DELETE FROM `matricula` WHERE codigoMatricula = _code;
 
 END$$
 
@@ -64,6 +78,13 @@ INSERT INTO aprendiz(NOMBRE, FECHANACIMIENTO, SEXO, CIUDAD) VALUES (_name, _fech
 
 END$$
 
+DROP PROCEDURE IF EXISTS `spInsertMatricula`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `spInsertMatricula` (IN `_fechaMatricula` DATE, IN `_nombreCentro` VARCHAR(150), IN `_costo` VARCHAR(50), IN `_estado` VARCHAR(50), IN `_codigoPrograma` INT(3), IN `_codigoAprendiz` INT(3))  BEGIN
+
+INSERT INTO matricula(fechaMatricula, nombreCentro, costo, estado, codigoPrograma, codigoAprendiz) VALUES(_fechaMatricula, _nombreCentro, _costo, _estado, _codigoPrograma, _codigoAprendiz);
+
+END$$
+
 DROP PROCEDURE IF EXISTS `spInsertUser`$$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `spInsertUser` (IN `_name` VARCHAR(25), IN `_lastName` VARCHAR(25), IN `_user` VARCHAR(25), IN `_password` VARCHAR(25))  BEGIN
 
@@ -76,6 +97,13 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `spSearchAllAprendiz` ()  NO SQL
 BEGIN
 
 SELECT codigo , nombre, fechaNacimiento, sexo, ciudad FROM aprendiz;
+
+END$$
+
+DROP PROCEDURE IF EXISTS `spSearchAllMatricula`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `spSearchAllMatricula` ()  BEGIN
+
+SELECT codigoMatricula, fechaMatricula, nombreCentro, costo, estado, codigoPrograma, codigoAprendiz FROM matricula;
 
 END$$
 
@@ -95,6 +123,19 @@ fechaNacimiento = _fechaNacimiento,
 sexo = _sexo,
 ciudad = _ciudad
 WHERE codigo  =  _codigo;	
+
+END$$
+
+DROP PROCEDURE IF EXISTS `spUpdateMatricula`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `spUpdateMatricula` (IN `_codigoMatricula` INT(3), IN `_fechaMatricula` DATE, IN `_nombreCentro` VARCHAR(150), IN `_costo` VARCHAR(50), IN `_estado` INT(50), IN `_codigoPrograma` INT(3), IN `_codigoAprendiz` INT(3))  BEGIN
+
+UPDATE matricula SET fechaMatricula = _fechaMatricula,
+nombreCentro = _nombreCentro,
+costo = _costo,
+estado = _estado,
+codigoPrograma = _codigoPrograma,
+codigoAprendiz = _codigoAprendiz
+WHERE codigoMatricula = _codigoMatricula ;	
 
 END$$
 
