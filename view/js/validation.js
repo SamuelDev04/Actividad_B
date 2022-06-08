@@ -77,23 +77,6 @@ function validateMod(e) {
 
 }
 
-function validateSidebarAp(e){
-
-    $('.inutil1').addClass('active');
-    
-}
-
-function validateSidebarMa(e){
-    
-    $('.inutil2').addClass('active');
-
-}
-
-function validateSidebarUs(e){
-
-    $('.inutil3').addClass('active');
-    
-}
 
 
 //Otra solucion que le habia dado

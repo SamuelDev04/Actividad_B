@@ -93,8 +93,8 @@
       </div>
       <?php
         if (isset($_POST['inameApre'])){
-          $objCtrUser = new AprendController();
-          $objCtrUser -> setInsertAprendiz($_POST['inameApre'], $_POST['naciApre'], $_POST['sexApren'], $_POST['ciuApren']);
+          $objCtrAprendiz = new AprendController();
+          $objCtrAprendiz -> setInsertAprendiz($_POST['inameApre'], $_POST['naciApre'], $_POST['sexApren'], $_POST['ciuApren']);
         }
       ?>
     </div>
@@ -119,34 +119,34 @@
                 <tr>
                   <th class="text-center">Codigo</th>
                   <th class="text-center">Nombre</th>
-                  <th class="text-center">Apellido</th>
-                  <th class="text-center">Usuario</th>
-                  <th class="text-center">Contraseña</th>
+                  <th class="text-center">Fecha de Nacimiento</th>
+                  <th class="text-center">Sexo</th>
+                  <th class="text-center">Ciudad</th>
                   <th class="text-center">Acciones</th>
                 </tr>
               </thead>
               <tbody>
                 <form action="" method="post">
                   <?php
+                    $objCtrAprendizAll = new AprendController();
 
-                    $objCtrUserAll = new UserController();
-                    if (gettype($objCtrUserAll -> getSearchAllUser()) == 'boolean') {
+                    if (gettype($objCtrAprendizAll -> getSearchAllAprendiz()) == 'boolean') {
                       echo '
                       <tr>
                         <td colspan = "5">No hay datos que mostrar</td>
                       </tr>';  
                     } else {
-                      foreach ($objCtrUserAll -> getSearchAllUser() as $key => $value) {
+                      foreach ($objCtrAprendizAll -> getSearchAllAprendiz() as $key => $value) {
                         echo '
                         <tr>
-                          <td>'. $value["CODE"] .'</td>
-                          <td>'. $value["NAME"] .'</td>
-                          <td>'. $value["LASTNAME"] .'</td>
-                          <td>'. $value["USERP"] .'</td>
-                          <td>'. $value["PASSWORD"] .'</td>
+                          <td>'. $value["codigo"] .'</td>
+                          <td>'. $value["nombre"] .'</td>
+                          <td>'. $value["fechaNacimiento"] .'</td>
+                          <td>'. $value["sexo"] .'</td>
+                          <td>'. $value["ciudad"] .'</td>
                           <td class="text-center">
-                            <button class="btn btn-social-icon btn-google" onclick="erase(this.parentElement.parentElement)"><i class="fa fa-trash"></i></button>
-                            <button class="btn btn-social-icon bg-blue" onclick="getData(this.parentElement.parentElement)" data-toggle="modal" data-target="#myModal"><i class="fa fa-pencil-square-o"></i></button>
+                            <button class="btn btn-social-icon btn-google" onclick="eraseApren(this.parentElement.parentElement)"><i class="fa fa-trash"></i></button>
+                            <button class="btn btn-social-icon bg-blue" onclick="getDataApren(this.parentElement.parentElement)" data-toggle="modal" data-target="#myModal"><i class="fa fa-pencil-square-o"></i></button>
                             </td>
                             </tr>';
                         }
