@@ -58,3 +58,8 @@ function getDataMat(obj) {
     document.getElementById('codigoAprendizm').value = codigoAprendiz;
     
 }
+
+function getGenerarReporteMatricula(e) {
+    e.preventDefault();
+    window.open('view/module/allmatricula.php', '_blank');
+}

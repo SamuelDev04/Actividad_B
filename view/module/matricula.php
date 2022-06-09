@@ -64,7 +64,7 @@
                 <div class="input-group">
                   <span class="input-group-addon">Estado</span>
                   <select class="form-control" id="estado" name="estado">
-                      <option value="" selected disabled hidden>Seleccione su estado</option>
+                      <option value="0" selected disabled hidden>Seleccione su estado</option>
                       <option value="1">Disponible</option>
                       <option value="2">No disponible</option>
                     </select>
@@ -97,7 +97,7 @@
           <button class="btn btn-app bg-blue" type="submit" onclick="validateMatricula(event)">
             <i class="fa fa-save"></i> Guardar
           </button>
-          <button class="btn btn-app bg-blue" type="submit" onclick="getGenerarReporte(event)">
+          <button class="btn btn-app bg-gray" type="submit" onclick="getGenerarReporteMatricula(event)">
             <i class="fa fa-print"></i> Reporte
           </button>
         </div>
