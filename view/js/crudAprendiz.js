@@ -47,10 +47,10 @@ function getDataApren(obj) {
     let ciudadApren = obj.children[4].innerHTML;
 
 
-    document.getElementById('icodeApre').value = codigoApren;
-    document.getElementById('inameApre').value = nombreApren;
-    document.getElementById('naciApre').value = fechaNaci;
-    document.getElementById('sexApren').value = sexoApren;
-    document.getElementById('ciuApren').value = ciudadApren;
+    document.getElementById('icodeAprem').value = codigoApren;
+    document.getElementById('inameAprem').value = nombreApren;
+    document.getElementById('naciAprem').value = fechaNaci;
+    document.getElementById('sexAprenm').value = sexoApren;
+    document.getElementById('ciuAprenm').value = ciudadApren;
 
 }

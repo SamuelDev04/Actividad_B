@@ -72,3 +72,41 @@ function validateApren(e) {
 if (window.history.replaceState) { // verificamos disponibilidad
     window.history.replaceState(null, null, window.location.href);
 }
+
+function validateModApren(e) {
+    e.preventDefault();
+    formulario = document.getElementById('modifiAprendiz');
+    codigo = document.getElementById('icodeAprem');
+    nombre = document.getElementById('inameAprem');
+    fechaNacimiento = document.getElementById('naciAprem');
+    sexoApren = document.getElementById('sexAprenm');
+    ciudadApren = document.getElementById('ciuAprenm');
+
+    lVali = true;
+
+    if (nombre.value == "") {
+        nombre.style.borderColor = "red";
+        ohSnap('Ingrese su nombre...', { color: 'red' }); // alert will have class 'alert-color'
+        lVali = false;
+    }
+    if (fechaNacimiento.value == "") {
+        fechaNacimiento.style.borderColor = "red";
+        ohSnap('Ingrese su fecha de nacimiento...', { color: 'red' }); // alert will have class 'alert-color'
+        lVali = false;
+    }
+    if (sexoApren.value == "") {
+        sexoApren.style.borderColor = "red";
+        ohSnap('Ingrese su sexo...', { color: 'red' }); // alert will have class 'alert-color'
+        lVali = false;
+    }
+    if (ciudadApren.value == "") {
+        ciudadApren.style.borderColor = "red";
+        ohSnap('Ingrese su ciudad de residencia...', { color: 'red' }); // alert will have class 'alert-color'
+        lVali = false;
+    }
+
+    if (lVali == true) {
+        formulario.submit();
+    }
+
+}

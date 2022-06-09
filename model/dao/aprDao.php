@@ -33,27 +33,12 @@
             return $estado;
         }
 
-        public function mIdSearchAllAprendiz()
-        {
-            $sql = "call spSearchAllAprendiz()";
-
-            try {
-                $objCon = new Conexion;
-                $stmt = $objCon -> getConec() -> prepare($sql);
-                $stmt -> execute();
-                $respon = $stmt;
-            } catch (PDOException $e) {
-                echo "Ha ocurrido un error al mostrar los datos en el dao " .$e -> getMessage();
-            }
-
-            return $respon;
-        }
-
+        
         public function mIdEraseAprendiz()
         {
             $respon = false;
             $sql = "call spDeleteAprendiz(?)";
-
+            
             try {
                 $objCon = new Conexion;
                 $stmt = $objCon -> getConec() -> prepare($sql);
@@ -68,9 +53,9 @@
 
         public function mIdUpdateAprendiz()
         {
-            $sql = "CALL spUpdateAprendiz(?, ?, ?, ?, ?);";
+            $sql = "CALL spUpdateAprendiz(?, ?, ?, ?, ?)";
             $estado = false;
-
+            
             try {
                 $objCon = new Conexion();
                 $stmt = $objCon -> getConec() -> prepare($sql);
@@ -86,6 +71,22 @@
             }
             return $estado;
         }
+        
+        public function mIdSearchAllAprendiz()
+        {
+            $sql = "call spSearchAllAprendiz()";
+    
+            try {
+                $objCon = new Conexion;
+                $stmt = $objCon -> getConec() -> prepare($sql);
+                $stmt -> execute();
+                $respon = $stmt;
+            } catch (PDOException $e) {
+                echo "Ha ocurrido un error al mostrar los datos en el dao " .$e -> getMessage();
+            }
+    
+            return $respon;
+        }
     }
-
-?>
+    
+    ?>

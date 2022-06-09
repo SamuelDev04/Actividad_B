@@ -176,23 +176,23 @@
 
         <!-- Modal body -->
         <div class="modal-body">
-        <form method="POST" id="modifiUsuario">
-          <input type="hidden" name="icodem" id="icodem">
+        <form method="POST" id="modifiAprendiz">
+          <input type="hidden" name="icodeAprem" id="icodeAprem">
         <!-- ROW 1 -->
           <div class="row">
             <div class="col-lg-6 col-xs-6">
               <!-- small box -->
               <div class="input-group">
                 <span class="input-group-addon">Nombre</span>
-                <input id="inamem" name="inamem" type="text" class="form-control">
+                <input id="inameAprem" name="inameAprem" type="text" class="form-control">
               </div>
             </div>
             <!-- ./col -->
             <div class="col-lg-6 col-xs-6">
               <!-- small box -->
               <div class="input-group">
-                <span class="input-group-addon">Apellido</span>
-                <input id="iapem" name="iapem" type="text" class="form-control">
+                <span class="input-group-addon">Fecha Nacimiento</span>
+                <input id="naciAprem" name="naciAprem" type="text" class="form-control">
               </div>
             </div>
           </div>
@@ -202,16 +202,16 @@
           <div class="col-lg-6 col-xs-6">
             <!-- small box -->
             <div class="input-group">
-              <span class="input-group-addon">Usuario</span>
-              <input id="iuserm" name="iuserm" type="text" class="form-control">
+              <span class="input-group-addon">Sexo</span>
+              <input id="sexAprenm" name="sexAprenm" type="text" class="form-control">
             </div>
           </div>
           <!-- ./col -->
           <div class="col-lg-6 col-xs-6">
             <!-- small box -->
             <div class="input-group">
-              <span class="input-group-addon">Contraseña</span>
-              <input id="icontram" name="icontram" type="password" class="form-control">
+              <span class="input-group-addon">Ciudad</span>
+              <input id="ciuAprenm" name="ciuAprenm" type="text" class="form-control">
             </div>
           </div>
           <!-- ./col -->
@@ -221,13 +221,13 @@
 
         <!-- Modal footer -->
         <div class="modal-footer">
-          <button class="btn btn-app bg-blue" type="submit" onclick="validateMod(event)">
+          <button class="btn btn-app bg-blue" type="submit" onclick="validateModApren(event)">
             <i class="fa fa-save"></i> Guardar
           </button>
           <?php
             if (isset($_POST['inamem'])){
-              $objCtrUser = new UserController();
-              $objCtrUser -> setUpdateUser($_POST['icodem'], $_POST['inamem'], $_POST['iapem'], $_POST['iuserm'], $_POST['icontram']);
+              $objCtrAprendiz = new AprendController();
+              $objCtrAprendiz -> setUpdateAprendiz($_POST['icodeAprem'], $_POST['inameAprem'], $_POST['naciAprem'], $_POST['sexAprenm'], $_POST['ciuAprenm']);
             }
           ?>
           <button type="button" class="btn btn-app bg-red" data-dismiss="modal">
