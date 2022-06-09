@@ -43,14 +43,16 @@
             return $respon;
         }
 
-        public function setUpdateMatricula($codigo,$nombre, $fechaNacimiento, $sexo, $ciudad){
+        public function setUpdateMatricula($codigoMatricula,$fechaMatricula,$nombreCentro,$costo,$estado,$codigoPrograma,$codigoAprendiz){
             try {
                 $objDtoMatricula = new Matricula();
-                $objDtoMatricula -> setCodigo($codigo);
-                $objDtoMatricula -> setNombre($nombre);
-                $objDtoMatricula -> setFechaNa($fechaNacimiento);
-                $objDtoMatricula -> setSexo($sexo);
-                $objDtoMatricula -> setCiudad($ciudad);
+                $objDtoMatricula -> setCodigoMatricula($codigoMatricula);
+                $objDtoMatricula -> setFechaMatricula($fechaMatricula);
+                $objDtoMatricula -> setNombreCentro($nombreCentro);
+                $objDtoMatricula -> setCosto($costo);
+                $objDtoMatricula -> setEstado($estado);
+                $objDtoMatricula -> setCodigoPrograma($codigoPrograma);
+                $objDtoMatricula -> setCodigoAprendiz($codigoAprendiz);
 
                 $objDaoMatricula = new MatriculaModel($objDtoMatricula);
 
@@ -64,11 +66,11 @@
                         })
                         </script>
                     ";
-                    include_once("view/module/Matricula.php");
+                    include_once("view/module/matricula.php");
                 }
 
             } catch(PDOException $e) {
-                echo "Error al modificar " .$e -> getMessage();
+                echo "Error al modificar la Matricula parcero" .$e -> getMessage();
             }
         }
     }

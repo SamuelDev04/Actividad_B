@@ -49,12 +49,12 @@ function getDataMat(obj) {
     let codigoAprendiz = obj.children[6].innerHTML;
 
 
-    document.getElementById('codigoMatricula').value = codigoMatricula;
-    document.getElementById('fechaMatricula').value = fechaMatricula;
-    document.getElementById('nombreCentro').value = nombreCentro;
-    document.getElementById('costo').value = costo;
-    document.getElementById('estado').value = estado;
-    document.getElementById('codigoPrograma').value = codigoPrograma;
-    document.getElementById('codigoAprendiz').value = codigoAprendiz;
+    document.getElementById('codigoMatriculam').value = codigoMatricula;
+    document.getElementById('fechaMatriculam').value = fechaMatricula;
+    document.getElementById('nombreCentrom').value = nombreCentro;
+    document.getElementById('costom').value = costo;
+    document.getElementById('estadom').value = estado;
+    document.getElementById('codigoProgramam').value = codigoPrograma;
+    document.getElementById('codigoAprendizm').value = codigoAprendiz;
     
 }

@@ -48,7 +48,7 @@
                 </div>
               </div>
             </div>
-          <br>
+            <br>
           <!-- ROW 2 CONTIENE COSTO Y ESTADO-->
             <div class="row">
               <div class="col-lg-6 col-xs-6">
@@ -63,7 +63,7 @@
                 <!-- small box -->
                 <div class="input-group">
                   <span class="input-group-addon">Estado</span>
-                  <select class="form-control" id="estado" name="estado" onchange="fillBook();">
+                  <select class="form-control" id="estado" name="estado">
                       <option value="" selected disabled hidden>Seleccione su estado</option>
                       <option value="1">Disponible</option>
                       <option value="2">No disponible</option>
@@ -72,7 +72,7 @@
               </div>
               <!-- ./col -->
             </div>
-          <br>
+            <br>
           <!-- ROW 3 CONTIENE CODIGO PROGRAMA Y APRENDIZ-->
             <div class="row">
               <div class="col-lg-6 col-xs-6">
@@ -189,66 +189,95 @@
 
         <!-- Modal Header -->
         <div class="modal-header bg-blue">
-          <h4 class="modal-title">Modificar usuario 😜</h4>
+          <h4 class="modal-title">Modificar Matricula 😜</h4>
         </div>
 
         <!-- Modal body -->
         <div class="modal-body">
-        <form method="POST" id="modifiUsuario">
-          <input type="hidden" name="icodem" id="icodem">
-        <!-- ROW 1 -->
+        <form method="POST" id="formMatriculam">
+          <input type="hidden" name="codigoMatriculam" id="codigoMatriculam">
+        <!-- ROW 1 MOD CONTIENE FECHA Y NOMBRE CENTRO-->
           <div class="row">
-            <div class="col-lg-6 col-xs-6">
-              <!-- small box -->
-              <div class="input-group">
-                <span class="input-group-addon">Nombre</span>
-                <input id="inamem" name="inamem" type="text" class="form-control">
+              <div class="col-lg-6 col-xs-6">
+                <!-- small box -->
+                <div class="input-group">
+                  <span class="input-group-addon">Fecha de Matricula</span>
+                  <input id="fechaMatriculam" name="fechaMatriculam" type="date" class="form-control">
+                </div>
+              </div>
+              <!-- ./col -->
+              <div class="col-lg-6 col-xs-6">
+                <!-- small box -->
+                <div class="input-group">
+                  <span class="input-group-addon">Nombre del Centro</span>
+                  <input id="nombreCentrom" name="nombreCentrom" type="text" class="form-control">
+                </div>
               </div>
             </div>
-            <!-- ./col -->
-            <div class="col-lg-6 col-xs-6">
-              <!-- small box -->
-              <div class="input-group">
-                <span class="input-group-addon">Apellido</span>
-                <input id="iapem" name="iapem" type="text" class="form-control">
+            <br>
+        <!-- ROW 2 MOD CONTIENE COSTO Y ESTADO-->
+          <div class="row">
+              <div class="col-lg-6 col-xs-6">
+                  <!-- small box -->
+                  <div class="input-group">
+                    <span class="input-group-addon">Costo</span>
+                    <input id="costom" name="costom" type="text" class="form-control">
+                  </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-6 col-xs-6">
+                  <!-- small box -->
+                  <div class="input-group">
+                    <span class="input-group-addon">Estado</span>
+                    <select class="form-control" id="estadom" name="estadom">
+                        <option value="" selected disabled hidden>Seleccione su estado</option>
+                        <option value="1">Disponible</option>
+                        <option value="2">No disponible</option>
+                      </select>
+                </div>
+            </div>
+                <!-- ./col -->
+          </div>
+          <br>
+        
+    
+          
+          
+    
+        <!-- ROW 3 MOD CONTIENE CODIGO PROGRAMA Y APRENDIZ-->
+          <div class="row">
+              <div class="col-lg-6 col-xs-6">
+                <!-- small box -->
+                <div class="input-group">
+                  <span class="input-group-addon">Codigo Programa</span>
+                  <input id="codigoProgramam" name="codigoProgramam" type="number" class="form-control">
+                </div>
               </div>
+              <!-- ./col -->
+              <div class="col-lg-6 col-xs-6">
+                <!-- small box -->
+                <div class="input-group">
+                  <span class="input-group-addon">Codigo Aprendiz</span>
+                  <input id="codigoAprendizm" name="codigoAprendizm" type="number" class="form-control">
+                </div>
+              </div>
+              <!-- ./col -->
             </div>
-          </div>
-        <br>
-        <!-- ROW 2 -->
-        <div class="row">
-          <div class="col-lg-6 col-xs-6">
-            <!-- small box -->
-            <div class="input-group">
-              <span class="input-group-addon">Usuario</span>
-              <input id="iuserm" name="iuserm" type="text" class="form-control">
-            </div>
-          </div>
-          <!-- ./col -->
-          <div class="col-lg-6 col-xs-6">
-            <!-- small box -->
-            <div class="input-group">
-              <span class="input-group-addon">Contraseña</span>
-              <input id="icontram" name="icontram" type="password" class="form-control">
-            </div>
-          </div>
-          <!-- ./col -->
-        </div>
         </form>
         </div>
 
         <!-- Modal footer -->
         <div class="modal-footer">
-          <button class="btn btn-app bg-blue" type="submit" onclick="validateMod(event)">
+          <button class="btn btn-google bg-blue" type="submit" onclick="validateMatriculaMod(event)">
             <i class="fa fa-save"></i> Guardar
           </button>
           <?php
-            if (isset($_POST['inamem'])){
-              $objCtrUser = new UserController();
-              $objCtrUser -> setUpdateUser($_POST['icodem'], $_POST['inamem'], $_POST['iapem'], $_POST['iuserm'], $_POST['icontram']);
+            if (isset($_POST['fechaMatriculam'])){
+              $objCtrMatricula = new MatriculaController();
+              $objCtrMatricula -> setUpdateMatricula($_POST['codigoMatriculam'],$_POST['fechaMatriculam'], $_POST['nombreCentrom'], $_POST['costom'], $_POST['estadom'], $_POST['codigoProgramam'], $_POST['codigoAprendizm']);
             }
           ?>
-          <button type="button" class="btn btn-app bg-red" data-dismiss="modal">
+          <button type="button" class="btn btn-google bg-red" data-dismiss="modal">
           <i class="fa fa-close"></i> Cerrar
           </button>
         </div>

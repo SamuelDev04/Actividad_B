@@ -74,18 +74,19 @@
 
         public function mIdUpdateMatricula()
         {
-            $sql = "CALL spUpdateMatricula(?, ?, ?, ?, ?);";
+            $sql = "CALL spUpdateMatricula(?, ?, ?, ?, ?, ?, ?);";
             $estado = false;
 
             try {
                 $objCon = new Conexion();
                 $stmt = $objCon -> getConec() -> prepare($sql);
-                $stmt -> bindParam(1, $this -> codigo,     PDO::PARAM_INT);
-                $stmt -> bindParam(2, $this -> nombre,     PDO::PARAM_STR);
-                $stmt -> bindParam(3, $this -> fechaNacimiento, PDO::PARAM_STR);
-                $stmt -> bindParam(4, $this -> sexo,    PDO::PARAM_STR);
-                $stmt -> bindParam(5, $this -> ciudad, 
-                PDO::PARAM_STR);
+                $stmt -> bindParam(0, $this -> codigoMatricula,         PDO::PARAM_INT);
+                $stmt -> bindParam(1, $this -> fechaMatricula,          PDO::PARAM_STR);
+                $stmt -> bindParam(2, $this -> nombreCentro,            PDO::PARAM_STR);
+                $stmt -> bindParam(3, $this -> costo,                   PDO::PARAM_STR);
+                $stmt -> bindParam(4, $this -> estado,                  PDO::PARAM_STR);
+                $stmt -> bindParam(5, $this -> codigoPrograma,          PDO::PARAM_INT);
+                $stmt -> bindParam(6, $this -> codigoAprendiz,          PDO::PARAM_INT);
                 $estado = $stmt -> execute();
             } catch (PDOexception $e) {
                 echo "Error al modificar matricula " . $e -> getMessage();
