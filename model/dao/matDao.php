@@ -80,13 +80,13 @@
             try {
                 $objCon = new Conexion();
                 $stmt = $objCon -> getConec() -> prepare($sql);
-                $stmt -> bindParam(0, $this -> codigoMatricula,         PDO::PARAM_INT);
-                $stmt -> bindParam(1, $this -> fechaMatricula,          PDO::PARAM_STR);
-                $stmt -> bindParam(2, $this -> nombreCentro,            PDO::PARAM_STR);
-                $stmt -> bindParam(3, $this -> costo,                   PDO::PARAM_STR);
-                $stmt -> bindParam(4, $this -> estado,                  PDO::PARAM_STR);
-                $stmt -> bindParam(5, $this -> codigoPrograma,          PDO::PARAM_INT);
-                $stmt -> bindParam(6, $this -> codigoAprendiz,          PDO::PARAM_INT);
+                $stmt -> bindParam(1, $this -> codigoMatricula,         PDO::PARAM_INT);
+                $stmt -> bindParam(2, $this -> fechaMatricula,          PDO::PARAM_STR);
+                $stmt -> bindParam(3, $this -> nombreCentro,            PDO::PARAM_STR);
+                $stmt -> bindParam(4, $this -> costo,                   PDO::PARAM_STR);
+                $stmt -> bindParam(5, $this -> estado,                  PDO::PARAM_STR);
+                $stmt -> bindParam(6, $this -> codigoPrograma,          PDO::PARAM_INT);
+                $stmt -> bindParam(7, $this -> codigoAprendiz,          PDO::PARAM_INT);
                 $estado = $stmt -> execute();
             } catch (PDOexception $e) {
                 echo "Error al modificar matricula " . $e -> getMessage();
