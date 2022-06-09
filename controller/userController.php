@@ -109,7 +109,3 @@
 
     //$objContro = new UserController();
     //$objContro -> getEvalClave("Juan32","22776172");
-
-
-
-?>
