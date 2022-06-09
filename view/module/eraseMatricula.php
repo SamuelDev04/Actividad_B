@@ -1,9 +1,10 @@
 <?php
     eraseMatricula();
+
     function eraseMatricula(){
         try {
             $objDtoMatricula = new Matricula();
-            $objDtoMatricula -> setCodigoMatricula($_GET['codigoMatricula']);
+            $objDtoMatricula -> setCodigoMatricula($_GET['codigo']);
             $objDaoMatricula = new MatriculaModel($objDtoMatricula);
             if ($objDaoMatricula -> mIdEraseMatricula() == true) {
                 echo "
