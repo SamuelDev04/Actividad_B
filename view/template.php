@@ -20,6 +20,9 @@
       case 'eraseAprendiz':
           include_once("view/module/eraseAprendiz.php");
           break;
+      case 'eraseMatricula':
+          include_once("view/module/eraseMatricula.php");
+          break;
         
       default:
         include_once("view/module/presentation.php");

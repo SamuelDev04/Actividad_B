@@ -35,6 +35,9 @@ function validate(e) {
 
 }
 
+
+
+
 if (window.history.replaceState) { // verificamos disponibilidad
     window.history.replaceState(null, null, window.location.href);
 }
@@ -76,7 +79,6 @@ function validateMod(e) {
     }
 
 }
-
 
 
 //Otra solucion que le habia dado
