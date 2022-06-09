@@ -49,7 +49,7 @@ function validateMatricula(e) {
 
 function validateMatriculaMod(e) {
     e.preventDefault();
-    formulario = document.getElementById('formMatriculam');
+    formulariom = document.getElementById('formMatriculam');
     fechaMatricula = document.getElementById('fechaMatriculam');
     nombreCentro = document.getElementById('nombreCentrom');
     costo = document.getElementById('costom');
@@ -57,41 +57,42 @@ function validateMatriculaMod(e) {
     codigoPrograma = document.getElementById('codigoProgramam');
     codigoAprendiz = document.getElementById('codigoAprendizm');
 
-    lVali = true;
+    lValim = true;
 
     if (fechaMatricula.value == "") {
         fechaMatricula.style.borderColor = "red";
         ohSnap('Ingrese la fecha de la matricula...', { color: 'red' }); // alert will have class 'alert-color'
-        lVali = false;
+        lValim = false;
     }
     if (nombreCentro.value == "") {
         nombreCentro.style.borderColor = "red";
         ohSnap('Ingrese el nombre del centro...', { color: 'red' }); // alert will have class 'alert-color'
-        lVali = false;
+        lValim = false;
     }
     if (costo.value == "") {
         costo.style.borderColor = "red";
         ohSnap('Ingrese el costo...', { color: 'red' }); // alert will have class 'alert-color'
-        lVali = false;
+        lValim = false;
     }
     if (estado.value == "") {
         estado.style.borderColor = "red";
         ohSnap('Ingrese el estado...', { color: 'red' }); // alert will have class 'alert-color'
-        lVali = false;
+        lValim = false;
     }
 
     if (codigoPrograma.value == "") {
         codigoPrograma.style.borderColor = "red";
         ohSnap('Ingrese el codigo del programa...', { color: 'red' }); // alert will have class 'alert-color'
-        lVali = false;
+        lValim = false;
     }
     if (codigoAprendiz.value == "") {
         codigoAprendiz.style.borderColor = "red";
         ohSnap('Ingrese el codigo del aprendiz...', { color: 'red' }); // alert will have class 'alert-color'
-        lVali = false;
+        lValim = false;
     }
-    if (lVali == true) {
-        formulario.submit();
+    if (lValim == true) {
+        formulariom.submit();
     }
+    
 
 }

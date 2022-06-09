@@ -57,16 +57,25 @@
                 $objDaoMatricula = new MatriculaModel($objDtoMatricula);
 
                 if ($objDaoMatricula -> mIdUpdateMatricula()) {
+                    // include_once("view/module/matricula.php");
                     echo "
                         <script>
                         Swal.fire({
-                            'Actualizado!',
-                            'Los campos ingresados se han actualizado',
-                            'success'
+                            icon: 'success',
+                            title: 'La Matricula se ha actualizado',
+                            showConfirmButton: false,
+                            timer: 1500
                         })
                         </script>
                     ";
-                    include_once("view/module/matricula.php");
+                    if (true){
+                        sleep(2);
+                        echo 
+                            "<script>
+                                console.log('Entro');
+                                location.replace('index.php?ruta=matricula');
+                            </script>";
+                    }
                 }
 
             } catch(PDOException $e) {
