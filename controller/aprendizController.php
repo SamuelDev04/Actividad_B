@@ -41,32 +41,32 @@
             return $respon;
         }
 
-        public function setUpdateAprendiz($codigo,$nombre, $fechaNacimiento, $sexo, $ciudad){
+        public function setUpdateAprendiz($codigo,$nombre, $fechaNacimiento, $sexo, $ciudad)
+        {
             try {
                 $objDtoAprendiz = new Aprendiz();
-                $objDtoAprendiz -> setCodigo($codigo);
-                $objDtoAprendiz -> setNombre($nombre);
-                $objDtoAprendiz -> setFechaNa($fechaNacimiento);
-                $objDtoAprendiz -> setSexo($sexo);
-                $objDtoAprendiz -> setCiudad($ciudad);
+                $objDtoAprendiz->setCodigo($codigo);
+                $objDtoAprendiz->setNombre($nombre);
+                $objDtoAprendiz->setFechaNa($fechaNacimiento);
+                $objDtoAprendiz->setSexo($sexo);
+                $objDtoAprendiz->setCiudad($ciudad);
 
                 $objDaoAprendiz = new AprendizModel($objDtoAprendiz);
 
-                if ($objDaoAprendiz -> mIdUpdateAprendiz()) {
-                    echo "
-                        <script>
+                if ($objDaoAprendiz->mIdUpdateAprendiz()) {
+                    echo "<script>
                         Swal.fire({
-                            'Actualizado!',
-                            'Los campos ingresados se han actualizado',
-                            'success'
+                            position: 'center',
+                            icon: 'success',
+                            title: 'La Aprendiz ha sido actualizada',
+                            showConfirmButton: false,
+                            timer: 1500
                         })
-                        </script>
-                    ";
+                        </script>";
                     include_once("view/module/aprendiz.php");
                 }
-
-            } catch(PDOException $e) {
-                echo "Error al modificar " .$e -> getMessage();
+            } catch (PDOException $e) {
+                echo "Error al modificar la Aprendiz parcero" . $e->getMessage();
             }
         }
     }

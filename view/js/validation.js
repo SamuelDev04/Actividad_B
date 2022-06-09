@@ -37,11 +37,6 @@ function validate(e) {
 
 
 
-
-if (window.history.replaceState) { // verificamos disponibilidad
-    window.history.replaceState(null, null, window.location.href);
-}
-
 function validateMod(e) {
     e.preventDefault();
     formulario = document.getElementById('modifiUsuario');
@@ -50,9 +45,9 @@ function validateMod(e) {
     apellido = document.getElementById('iapem');
     usuario = document.getElementById('iuserm');
     clave = document.getElementById('icontram');
-
+    
     lVali = true;
-
+    
     if (nombre.value == "") {
         nombre.style.borderColor = "red";
         ohSnap('Ingrese su nombre...', { color: 'red' }); // alert will have class 'alert-color'
@@ -73,13 +68,16 @@ function validateMod(e) {
         ohSnap('Ingrese su contraseña...', { color: 'red' }); // alert will have class 'alert-color'
         lVali = false;
     }
-
+    
     if (lVali == true) {
         formulario.submit();
     }
-
+    
 }
 
+if (window.history.replaceState) { // verificamos disponibilidad
+    window.history.replaceState(null, null, window.location.href);
+}
 
 //Otra solucion que le habia dado
 
@@ -92,13 +90,13 @@ function validateAll() {
     validateApe();
     validateUser();
     validatePass();
-
+    
     this.submit();
 }
 
 function validateName(e) {
     e.preventDefault();
-
+    
     let name = document.getElementById('iname').value;
     if (name.length == 0) {
         alert("Nombre en blanco");
@@ -107,7 +105,7 @@ function validateName(e) {
 }
 function validateApe(e) {
     e.preventDefault();
-
+    
     let ape = document.getElementById('iape').value;
     if (ape.length == 0) {
         alert("Apellido en blanco");

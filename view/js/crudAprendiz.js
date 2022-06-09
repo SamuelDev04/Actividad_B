@@ -1,5 +1,5 @@
 function eraseApren(obj) {
-    let codigo = obj.children[0].innerHTML;
+    let codigoAprendiz = obj.children[0].innerHTML;
 
     const swalWithBootstrapButtons = Swal.mixin({
         customClass: {
@@ -19,7 +19,7 @@ function eraseApren(obj) {
         reverseButtons: true
     }).then((result) => {
         if (result.isConfirmed) {
-            window.location = "index.php?ruta=eraseAprendiz&codigo=" + codigo;
+            window.location = "index.php?ruta=eraseAprendiz&codigo=" + codigoAprendiz;
 
             /*swalWithBootstrapButtons.fire(
                 'Eliminado!',

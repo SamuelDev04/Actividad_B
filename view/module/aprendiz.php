@@ -62,7 +62,7 @@
                 <div class="input-group">
                   <span class="input-group-addon">Sexo</span>
                   <select class="form-control" id="sexApren" name="sexApren" onchange="fillBook();">
-                    <option value="" selected disabled hidden></option>
+                    <option value="" selected disabled hidden>Seleccione su sexo</option>
                     <option value="1">Mujer</option>
                     <option value="2">Hombre</option>
                     <option value="3">Otro</option>
@@ -171,67 +171,72 @@
 
         <!-- Modal Header -->
         <div class="modal-header bg-blue">
-          <h4 class="modal-title">Modificar usuario 😜</h4>
+          <h4 class="modal-title">Modificar Aprendiz 😜</h4>
         </div>
 
         <!-- Modal body -->
         <div class="modal-body">
-        <form method="POST" id="modifiAprendiz">
-          <input type="hidden" name="icodeAprem" id="icodeAprem">
-        <!-- ROW 1 -->
-          <div class="row">
-            <div class="col-lg-6 col-xs-6">
-              <!-- small box -->
-              <div class="input-group">
-                <span class="input-group-addon">Nombre</span>
-                <input id="inameAprem" name="inameAprem" type="text" class="form-control">
+          <form method="POST" id="formAprendizm">
+            <input type="hidden" name="icodeAprem" id="icodeAprem">
+            <!-- ROW 1 MOD CONTIENE NOMBRE Y FECHA DE NACIMIENTO-->
+            <div class="row">
+              <div class="col-lg-6 col-xs-6">
+                <!-- small box -->
+                <div class="input-group">
+                  <span class="input-group-addon">Nombre</span>
+                  <input id="inameAprem" name="inameAprem" type="text" class="form-control">
+                </div>
+              </div>
+              <!-- ./col -->
+              <div class="col-lg-6 col-xs-6">
+                <!-- small box -->
+                <div class="input-group">
+                  <span class="input-group-addon">Fecha Nacimiento</span>
+                  <input id="naciAprem" name="naciAprem" type="date" class="form-control">
+                </div>
               </div>
             </div>
-            <!-- ./col -->
-            <div class="col-lg-6 col-xs-6">
-              <!-- small box -->
-              <div class="input-group">
-                <span class="input-group-addon">Fecha Nacimiento</span>
-                <input id="naciAprem" name="naciAprem" type="text" class="form-control">
+            <br>
+            <!-- ROW 2 MOD CONTIENE SEXO Y CIUDAD-->
+            <div class="row">
+              <div class="col-lg-6 col-xs-6">
+                <!-- small box -->
+                <div class="input-group">
+                  <span class="input-group-addon">Sexo</span>
+                  <select class="form-control" id="sexAprenm" name="sexAprenm">
+                    <option value="" selected disabled hidden>Seleccione su estado</option>
+                    <option value="1">Mujer</option>
+                    <option value="2">Hombre</option>
+                    <option value="3">Otro</option>
+                  </select>
+                </div>
               </div>
+              <!-- ./col -->
+              <div class="col-lg-6 col-xs-6">
+                <!-- small box -->
+                <div class="input-group">
+                  <span class="input-group-addon">Ciudad</span>
+                  <input id="ciuAprenm" name="ciuAprenm" type="text" class="form-control">
+                </div>
+              </div>
+              <!-- ./col -->
             </div>
-          </div>
-        <br>
-        <!-- ROW 2 -->
-        <div class="row">
-          <div class="col-lg-6 col-xs-6">
-            <!-- small box -->
-            <div class="input-group">
-              <span class="input-group-addon">Sexo</span>
-              <input id="sexAprenm" name="sexAprenm" type="text" class="form-control">
-            </div>
-          </div>
-          <!-- ./col -->
-          <div class="col-lg-6 col-xs-6">
-            <!-- small box -->
-            <div class="input-group">
-              <span class="input-group-addon">Ciudad</span>
-              <input id="ciuAprenm" name="ciuAprenm" type="text" class="form-control">
-            </div>
-          </div>
-          <!-- ./col -->
-        </div>
-        </form>
+          </form>
         </div>
 
         <!-- Modal footer -->
         <div class="modal-footer">
-          <button class="btn btn-app bg-blue" type="submit" onclick="validateModApren(event)">
+          <button class="btn btn-google bg-blue" type="submit" onclick="validateAprendizMod(event)">
             <i class="fa fa-save"></i> Guardar
           </button>
           <?php
-            if (isset($_POST['inamem'])){
-              $objCtrAprendiz = new AprendController();
-              $objCtrAprendiz -> setUpdateAprendiz($_POST['icodeAprem'], $_POST['inameAprem'], $_POST['naciAprem'], $_POST['sexAprenm'], $_POST['ciuAprenm']);
-            }
+          if (isset($_POST['inameAprem'])) {
+            $objCtrAprendiz = new AprendController();
+            $objCtrAprendiz->setUpdateAprendiz($_POST['icodeAprem'], $_POST['inameAprem'], $_POST['naciAprem'], $_POST['sexAprenm'], $_POST['ciuAprenm']);
+          }
           ?>
-          <button type="button" class="btn btn-app bg-red" data-dismiss="modal">
-          <i class="fa fa-close"></i> Cerrar
+          <button type="button" class="btn btn-google bg-red" data-dismiss="modal">
+            <i class="fa fa-close"></i> Cerrar
           </button>
         </div>
 
