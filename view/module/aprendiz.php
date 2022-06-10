@@ -84,7 +84,7 @@
           <button class="btn btn-app bg-blue" type="submit" onclick="validateApren(event)">
             <i class="fa fa-save"></i> Guardar
           </button>
-          <button class="btn btn-app bg-blue" type="submit" onclick="getGenerarReporte(event)">
+          <button class="btn btn-app bg-gray" type="submit" onclick="getGenerarReporteAprendiz(event)">
             <i class="fa fa-print"></i> Reporte
           </button>
         </div>

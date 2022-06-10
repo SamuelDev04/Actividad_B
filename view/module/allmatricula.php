@@ -18,7 +18,7 @@
             $this -> pdf->SetFont('Arial','B',16);
 
             // Logo
-            $this -> pdf ->Image('../img/a.jpg',20,5,40);
+            $this -> pdf ->Image('../img/a.jpg',20,5,35);
             // Arial bold 15
             $this -> pdf ->SetFont('Arial','B',15);
             // Movernos a la derecha
@@ -26,7 +26,7 @@
             // Título
             $this -> pdf ->Cell(30,10,'Reporte Matricula',0,0,'C');
             // Salto de línea
-            $this -> pdf ->Ln(20);
+            $this -> pdf ->Ln(30);
         }
 
         //Info de la pagina
@@ -42,15 +42,21 @@
                 echo "Error en la creacion del controlador para mostrar todas las matriculas pa ". $e -> getMessage();
             }
 
+            // Cabecera
+            $header = array('Codigo', 'Fecha Matricula', 'Nombre Centro', 'Costo', 'Estado', 'Cod Programa', 'Cod Aprendiz');
+            foreach($header as $col)
+                $this-> pdf -> Cell(27,10,$col,1,0,'C');
+                $this-> pdf -> Ln(10);
+
             foreach ($respon as $key => $value) {
-                $this -> pdf->Cell(30,30, $value['codigoMatricula']);
-                $this -> pdf->Cell(30,30, $value['fechaMatricula']);
-                $this -> pdf->Cell(30,30, $value['nombreCentro']);
-                $this -> pdf->Cell(30,30, $value['costo']);
-                $this -> pdf->Cell(30,30, $value['estado']);
-                $this -> pdf->Cell(30,30, $value['codigoPrograma']);
-                $this -> pdf->Cell(30,30, $value['codigoAprendiz']);
-                $this -> pdf -> Ln(12);
+                $this -> pdf->Cell(27,10, $value['codigoMatricula'],1,0,'C');
+                $this -> pdf->Cell(27,10, $value['fechaMatricula'],1,0,'C');
+                $this -> pdf->Cell(27,10, $value['nombreCentro'],1,0,'C');
+                $this -> pdf->Cell(27,10, $value['costo'],1,0,'C');
+                $this -> pdf->Cell(27,10, $value['estado'],1,0,'C');
+                $this -> pdf->Cell(27,10, $value['codigoPrograma'],1,0,'C');
+                $this -> pdf->Cell(27,10, $value['codigoAprendiz'],1,0,'C');
+                $this -> pdf -> Ln(10);
             }      
 
         } 

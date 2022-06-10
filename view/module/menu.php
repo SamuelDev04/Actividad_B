@@ -8,14 +8,14 @@
 
         <!--<li class="inutil1 treeview" onclick="validateSidebarAp(event)">-->
         <li class="inutil1">
-          <a href="index.php?ruta=aprendiz">
+          <a href="aprendiz">
             <i class="fa fa-pencil"></i> 
             <span>Aprendiz 😫</span>
           </a>
         </li>
         <!--<li class="inutil2 treeview" onclick="validateSidebarMa(event)">-->
         <li class="inutil2">
-          <a href="index.php?ruta=matricula">
+          <a href="matricula">
             <i class="fa fa-mortar-board"></i>
             <span>Matricula 😀</span>
           </a>

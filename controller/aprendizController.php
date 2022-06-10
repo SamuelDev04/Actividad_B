@@ -54,16 +54,11 @@
                 $objDaoAprendiz = new AprendizModel($objDtoAprendiz);
 
                 if ($objDaoAprendiz->mIdUpdateAprendiz()) {
-                    echo "<script>
-                        Swal.fire({
-                            position: 'center',
-                            icon: 'success',
-                            title: 'La Aprendiz ha sido actualizada',
-                            showConfirmButton: false,
-                            timer: 1500
-                        })
+                    //include_once("view/module/aprendiz.php");
+                    echo 
+                        "<script>
+                            location.replace('aprendiz');
                         </script>";
-                    include_once("view/module/aprendiz.php");
                 }
             } catch (PDOException $e) {
                 echo "Error al modificar la Aprendiz parcero" . $e->getMessage();

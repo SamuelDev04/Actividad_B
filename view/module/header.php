@@ -1,6 +1,6 @@
 <header class="main-header">
     <!-- Logo -->
-    <a href="index2.html" class="logo">
+    <a href="index.php" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>S</b>NA</span>
       <!-- logo for regular state and mobile devices -->
@@ -18,7 +18,7 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <span class="hidden-xs">David Noreña</span>
+              <span class="hidden-xs">Samuel Yepes</span>
             </a>
             <ul class="dropdown-menu">
               <!-- Menu Footer-->
@@ -26,7 +26,7 @@
                 <div class="pull-right">
                   <form method="post">
                     <input type="hidden" name="txtSalir">
-                    <button type="submit" class="btn btn-default btn-flat bg-red">Cerrar</button>
+                    <button type="submit" class="btn btn-default btn-flat bg-blue">Salir</button>
                   </form>
                   <?php
                     if (isset($_POST['txtSalir'])){

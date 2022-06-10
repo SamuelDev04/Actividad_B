@@ -54,3 +54,8 @@ function getDataApren(obj) {
     document.getElementById('ciuAprenm').value = ciudadApren;
 
 }
+
+function getGenerarReporteAprendiz(e) {
+    e.preventDefault();
+    window.open('view/module/allaprendiz.php', '_blank');
+}

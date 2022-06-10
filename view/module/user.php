@@ -73,7 +73,7 @@
           <button class="btn btn-app bg-blue" type="submit" onclick="validate(event)">
             <i class="fa fa-save"></i> Guardar
           </button>
-          <button class="btn btn-app bg-blue" type="submit" onclick="getGenerarReporte(event)">
+          <button class="btn btn-app bg-gray" type="submit" onclick="getGenerarReporte(event)">
             <i class="fa fa-print"></i> Reporte
           </button>
         </div>
@@ -211,7 +211,7 @@
 
         <!-- Modal footer -->
         <div class="modal-footer">
-          <button class="btn btn-app bg-blue" type="submit" onclick="validateMod(event)">
+          <button class="btn btn-google bg-blue" type="submit" onclick="validateMod(event)">
             <i class="fa fa-save"></i> Guardar
           </button>
           <?php
@@ -220,7 +220,7 @@
               $objCtrUser -> setUpdateUser($_POST['icodem'], $_POST['inamem'], $_POST['iapem'], $_POST['iuserm'], $_POST['icontram']);
             }
           ?>
-          <button type="button" class="btn btn-app bg-red" data-dismiss="modal">
+          <button type="button" class="btn btn-google bg-red" data-dismiss="modal">
           <i class="fa fa-close"></i> Cerrar
           </button>
         </div>
