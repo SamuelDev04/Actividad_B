@@ -2,9 +2,9 @@
     <!-- Logo -->
     <a href="index2.html" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b></b>SNA</span>
+      <span class="logo-mini"><b>S</b>NA</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b></b>SENA</span>
+      <span class="logo-lg"><b>Sena</b></span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
@@ -15,25 +15,24 @@
 
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
-          
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <span class="hidden-xs">Samuel Yepes Osorio</span>
+              <span class="hidden-xs">David Noreña</span>
             </a>
             <ul class="dropdown-menu">
               <!-- Menu Footer-->
               <li class="user-footer">
-                <div class="pull-center">
+                <div class="pull-right">
                   <form method="post">
-                    <input type="hidden" name="isalir">
-                    <button type="submit" class="btn btn-default bg-red btn-flat">Sign out</button>
+                    <input type="hidden" name="txtSalir">
+                    <button type="submit" class="btn btn-default btn-flat bg-red">Cerrar</button>
                   </form>
                   <?php
-                    if (isset($_POST['isalir'])) {
+                    if (isset($_POST['txtSalir'])){
                       $_SESSION['login'] = false;
                       unset($_SESSION['login']);
-                      header('location:index.php');
+                      header('location: index.php');
                     }
                   ?>
                 </div>

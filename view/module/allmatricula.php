@@ -31,7 +31,7 @@
 
         //Info de la pagina
         public function viewAll(){
-            $this -> pdf->SetFont('Arial','B',16);
+            $this -> pdf->SetFont('Arial','B',10);
 
             try {
                 $objDtoMatricula = new Matricula();
@@ -43,14 +43,14 @@
             }
 
             foreach ($respon as $key => $value) {
-                $this -> pdf->Cell(40,50, $value['codigoMatricula']);
-                $this -> pdf->Cell(40,50, $value['fechaMatricula']);
-                $this -> pdf->Cell(40,50, $value['nombreCentro']);
-                $this -> pdf->Cell(40,50, $value['costo']);
-                $this -> pdf->Cell(40,50, $value['estado']);
-                $this -> pdf->Cell(40,50, $value['codigoPrograma']);
-                $this -> pdf->Cell(40,50, $value['codigoAprendiz']);
-                $this -> pdf -> Ln(10);
+                $this -> pdf->Cell(30,30, $value['codigoMatricula']);
+                $this -> pdf->Cell(30,30, $value['fechaMatricula']);
+                $this -> pdf->Cell(30,30, $value['nombreCentro']);
+                $this -> pdf->Cell(30,30, $value['costo']);
+                $this -> pdf->Cell(30,30, $value['estado']);
+                $this -> pdf->Cell(30,30, $value['codigoPrograma']);
+                $this -> pdf->Cell(30,30, $value['codigoAprendiz']);
+                $this -> pdf -> Ln(12);
             }      
 
         } 
