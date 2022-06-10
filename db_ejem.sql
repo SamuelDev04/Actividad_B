@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-06-2022 a las 18:37:31
--- Versión del servidor: 10.4.22-MariaDB
--- Versión de PHP: 7.3.33
+-- Tiempo de generación: 10-06-2022 a las 18:12:29
+-- Versión del servidor: 10.4.17-MariaDB
+-- Versión de PHP: 7.3.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -166,14 +166,16 @@ CREATE TABLE IF NOT EXISTS `aprendiz` (
   `sexo` varchar(50) NOT NULL,
   `ciudad` varchar(50) NOT NULL,
   PRIMARY KEY (`codigo`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `aprendiz`
 --
 
 INSERT INTO `aprendiz` (`codigo`, `nombre`, `fechaNacimiento`, `sexo`, `ciudad`) VALUES
-(1, 'Juaniyo', '2008-06-24', '1', 'Pereira');
+(1, 'aaaa', '2020-09-04', '2', 'Fufa'),
+(5, 'Fimosis', '2022-03-09', '3', 'Medallo mpp'),
+(6, 'Kaslu', '2022-06-08', '3', 'Nariño');
 
 -- --------------------------------------------------------
 
@@ -191,7 +193,16 @@ CREATE TABLE IF NOT EXISTS `matricula` (
   `codigoPrograma` int(3) NOT NULL,
   `codigoAprendiz` int(3) NOT NULL,
   PRIMARY KEY (`codigoMatricula`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `matricula`
+--
+
+INSERT INTO `matricula` (`codigoMatricula`, `fechaMatricula`, `nombreCentro`, `costo`, `estado`, `codigoPrograma`, `codigoAprendiz`) VALUES
+(1, '2022-06-16', 'SENA', '1000', '1', 1, 1),
+(2, '2020-01-01', 'SENA', '1000', '1', 0, 4),
+(4, '2022-06-30', '1', '1', '1', 1, 1004);
 
 -- --------------------------------------------------------
 
@@ -214,12 +225,12 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 INSERT INTO `user` (`code`, `name`, `lastName`, `userP`, `password`) VALUES
-(1, 'Samuel', 'Yepes', 'DIR', '2255451'),
+(1, 'Samuel', 'Yepes', 'DIRE', '2255451'),
 (6, 'carlos', 'mario', 'c', '02'),
 (53, '1', '1', '67', '57'),
 (54, '2', '4', '2', '2'),
 (56, '77', '77', '77', '77'),
-(60, '22', '22', '22', '22');
+(60, '1', '1', '22', '22');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
