@@ -56,6 +56,22 @@
                 <span class="input-group-addon">Costo</span>
                 <input id="costo" name="costo" type="text" class="form-control">
               </div>
+<<<<<<< HEAD
+=======
+              <!-- ./col -->
+              <div class="col-lg-6 col-xs-6">
+                <!-- small box -->
+                <div class="input-group">
+                  <span class="input-group-addon">Estado</span>
+                  <select class="form-control" id="estado" name="estado">
+                      <option value="0" selected disabled hidden>Seleccione su estado</option>
+                      <option value="1">Disponible</option>
+                      <option value="2">No disponible</option>
+                    </select>
+                </div>
+              </div>
+              <!-- ./col -->
+>>>>>>> david2
             </div>
             <!-- ./col -->
             <div class="col-lg-6 col-xs-6">
@@ -81,6 +97,7 @@
                 <input id="codigoPrograma" name="codigoPrograma" type="number" class="form-control">
               </div>
             </div>
+<<<<<<< HEAD
             <!-- ./col -->
             <div class="col-lg-6 col-xs-6">
               <!-- small box -->
@@ -102,6 +119,19 @@
           </div>
           <!-- /.box-footer-->
         </form>
+=======
+        <!-- /.box-body -->
+        <div class="box-footer">
+          <button class="btn btn-app bg-blue" type="submit" onclick="validateMatricula(event)">
+            <i class="fa fa-save"></i> Guardar
+          </button>
+          <button class="btn btn-app bg-gray" type="submit" onclick="getGenerarReporteMatricula(event)">
+            <i class="fa fa-print"></i> Reporte
+          </button>
+        </div>
+        <!-- /.box-footer-->
+      </form>
+>>>>>>> david2
       </div>
       <?php
       if (isset($_POST['fechaMatricula'])) {
